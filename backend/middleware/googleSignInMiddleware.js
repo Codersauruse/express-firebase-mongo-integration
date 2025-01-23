@@ -1,6 +1,7 @@
 const admin = require("../config/firebase.js");
 
 const googleSignInMiddleWare = async (req, res, next) => {
+  console.log("yello");
   try {
     // Check for Authorization header
     const authHeader = req.headers.authorization;
