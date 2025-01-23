@@ -15,7 +15,7 @@ export default function GoogleSignIn() {
 
       // Send ID token to the backend
       const response = await axios.post(
-        "http://localhost:5001/api/auth/google-register",
+        "http://localhost:5001/api/auth/google-login",
         {},
         {
           headers: { authorization: `Bearer ${idToken}` },

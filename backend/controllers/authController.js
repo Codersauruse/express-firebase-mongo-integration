@@ -96,16 +96,18 @@ const login = async (req, res) => {
 
 const googleLogin = async (req, res) => {
   try {
-    const { username, email } = req.body;
+    console.log("yo");
+    const { uid, email, name } = req.user;
 
-    if (!email || !username) {
+    if (!email || !name) {
       return res.status(400).json({
         success: false,
         message: "Username and email are required",
       });
     }
-
+    console.log("yo yo");
     const user = await User.findOne({ email });
+    console.log(user);
 
     if (!user) {
       return res.status(404).json({
@@ -115,15 +117,16 @@ const googleLogin = async (req, res) => {
     }
 
     // Assume Google login bypasses traditional credential checks
-    const token = createToken(user._id, username, user.role);
-
+    const token = createToken(user._id, name, user.role);
+    console.log(token);
     return res.status(200).json({
       success: true,
       id: user._id,
-      username: username,
+      username: name,
       roles: user.role,
       token: token,
     });
+    
   } catch (error) {
     console.error("Error in googleLogin:", error.message);
 

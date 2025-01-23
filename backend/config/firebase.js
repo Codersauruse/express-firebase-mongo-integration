@@ -1,4 +1,11 @@
 const admin = require("firebase-admin"); // Import the Firebase Admin SDK
+const {
+  getFirestore,
+  Timestamp,
+  FieldValue,
+  Filter,
+} = require("firebase-admin/firestore");
+
 const serviceAccount = require("./test-project.json"); // Path to the downloaded key
 
 admin.initializeApp({
@@ -6,8 +13,7 @@ admin.initializeApp({
   // Add databaseURL if needed: databaseURL: "https://your-database-url.firebaseio.com"
 });
 
-// Access Firestore
-//onst db = admin.firestore(); // Initialize Firestore instance
+const db = getFirestore();
 
 // Export the admin SDK and Firestore instance for use in other parts of your project
-module.exports = admin;
+module.exports = { admin, db };
