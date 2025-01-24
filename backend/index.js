@@ -7,6 +7,7 @@ const addData = require("./Firestore/addData.js");
 const addDataToMongo = require("./Firestore/updateMongoDB.js");
 const Cars = require("./models/Cars.js");
 const Motorcycle = require("./models/motocycles.js");
+const analyzeData = require("./Firestore/analyzeData.js");
 const app = express();
 
 // Middleware
@@ -32,6 +33,9 @@ addDataToMongo("Vehicles", "Car", Cars);
 
 //log the cycle data
 addDataToMongo("Vehicles", "motocycles", Motorcycle);
+//analyzing data
+
+analyzeData();
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -51,7 +51,7 @@ const addDataToMongo = async (collectionName, documentName, DataModel) => {
         return;
     }
 
-    console.log(`Document data from ${documentName}:`, data);
+    // console.log(`Document data from ${documentName}:`, data);
 
     // Save each vehicle to MongoDB
     for (const vehicle of data) {

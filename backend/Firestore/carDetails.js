@@ -55,6 +55,13 @@ const cars = [
     color: "Green",
     price: 210000,
   },
+  {
+    name: "Ferrari",
+    model: "F40",
+    year: "2019",
+    color: "red",
+    price: 300000,
+  },
 ];
 
-module.exports =  cars;
+module.exports = cars;

@@ -2,6 +2,8 @@ const { db } = require("../config/firebase.js");
 const cars = require("./carDetails.js");
 const motorcycles = require("./motocycles.js");
 
+
+//add data to firebase and collection
 const addData = async () => {
   // Connect to the "Vehicles" collection, "Car" document
   const carsDoc = db.collection("Vehicles").doc("Car");
